@@ -1,0 +1,61 @@
+{% extends "layout2.html" %} 
+{% block heading %} 
+You are now logged in! 
+{% endblock %} 
+{% block bodycontent %}
+
+<header class="space">
+
+<div class="landingleft2">
+  <h1 class="headtitle2">Welcome, {{ username }}!</h1>
+
+  <div class="container">
+    <h3 class = "somespace">Enter an ISBN, Author or Title to search from over 5000 books in our database!</h3>
+    <form class="booksearch" action="{{ url_for('books') }}" method="POST">
+      <div class="form-group">
+        <input class="form-control" name="searcher" type="text" placeholder="Search" aria-label="Search"/></div>
+      <div>
+        <button class="btn btn-primary svgbutton" type="submit">Search</button>
+      </div>
+    </form>
+  </div>
+    <h3 class ="bolditalic space">Showing Results for... "{{ query }}"</h3>
+
+</div>
+
+<div class="landingright2">
+
+<div class ="scrollbox faded">
+  <div class="form-group">
+    <ul>
+      {% for book in bookresults %}
+
+      <div class ="ListCard">
+      <li>
+        <a href="{{ url_for('singlebooks', book_isbn = book.isbn)}}">{{ book.title }} by {{ book.author }}</a>
+      </li>
+    </div>
+
+      {% endfor %}
+    </ul>
+
+  </div>
+
+
+
+</header>
+
+<div class = "foot">
+
+    <div class ="dotcontain">
+        <img src="../static/assets/dots1.svg" alt ="page dots">
+    </div>
+
+    <div class="pull-left">
+        <h3>{{ results }} Results</h3>
+    </div>
+
+</div>
+
+
+{% endblock %}

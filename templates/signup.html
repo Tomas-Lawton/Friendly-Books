@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+
+{% block bodycontent %}
+    
+<div class="CardContain"> 
+
+<div class = "Card">
+
+    <h1 class = "CardName">Friendly Books</h1>
+    <h2>Sign Up</h2>
+
+    <hr>
+
+    <h4 class = "formerrortext">{{ errormessage }}</h4>
+
+    <form class = "signup" action="{{ url_for('submitted') }}" method="POST">
+        <input type="email" class = "form-control" name="email" placeholder="Email Address">
+        <input type="text" class = "form-control" name="username" placeholder="Username">
+        <input type="password" class = "form-control" name="password" placeholder="Password">
+        <input type="password" class = "form-control" name="confirmation" placeholder="Confirm Password">
+        <button class = "btn btn-primary svgbutton" type="submit">Sign Up</button>
+    </form>
+
+    <p>Already have an account? <a class = "makeyellow" href="{{ url_for('login') }}">Login</a></p>
+</div>
+
+</div>
+
+{% endblock %}

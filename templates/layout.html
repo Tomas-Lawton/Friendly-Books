@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.typekit.net/oon4zak.css">
+        <link rel = "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <title>Friendly Books</title>
+    </head>
+
+    <body>
+
+    <nav>
+
+        <div class="nav-left">
+        <a href ="{{ url_for('index') }}"><img src="../static/assets/bookicon0.svg" alt ="book icon" class ="book_icon"></a>
+        <a href="{{ url_for('index') }}">Friendly Books</a>
+        </div>
+
+        <div class="nav-right">
+        <ul>
+            <li><a href="{{ url_for('api') }}">API</a></li>
+            <li><a href="{{ url_for('login') }}">LOGIN</a></li>
+            <li><a href="{{ url_for('signup') }}"><span class="svgbutton">SIGN UP</span></a></li>
+        </ul>
+
+        </div>
+
+
+
+
+    </nav>
+
+        {% block bodycontent %}
+        {% endblock %}
+
+        <div class ="dotcontain">
+            <img src="../static/assets/dots0.svg" alt ="page dots">
+        </div>
+    </body>
+
+
+</html>

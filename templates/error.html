@@ -1,0 +1,21 @@
+{% extends "layout2.html" %}
+
+{% block bodycontent %}
+
+<body>
+<div class="ListCard">
+    <h1>Error</h1>
+
+    <h2>Message: {{ message }}</h2>
+
+    <div class = "sometop">
+
+        <a href="{{ url_for('singlebooks', book_isbn = ISBN) }}" class ="svgbutton">Back to book</a>
+
+    </div>
+
+</div>
+</body>
+
+{% endblock %}
+

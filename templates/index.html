@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block bodycontent %}
+    
+    <header>
+
+        <div class ="landingleft">
+        <h1 id="headtitle">Friendly Books</h1>
+        <p class="landingblurb">A better way to share books with friends! Find the perfect book for you by reading ratings and reviews for over 5000 books!</p>
+        <a href="{{ url_for('signup') }}" class="signupbtn svgbutton">SIGN UP</a>
+        <a class = "makeyellow spaceabove" href="{{ url_for('login') }}">Login</a>     
+    
+    </div>
+
+        <div class ="landingright">
+            <img src="../static/assets/background svg00.svg" class ="myvector" alt ="book friends illustration">
+        </div>
+
+    </header>
+
+
+
+
+{% endblock %}

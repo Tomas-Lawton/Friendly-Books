@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://use.typekit.net/oon4zak.css">
+        <link rel = "stylesheet" type= "text/css" href= "{{ url_for('static',filename='style.css') }}">
+        <title>Friendly Books</title>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
+    </head>
+
+    <body>
+
+    <nav>
+
+        <div class="nav-left">
+        <a href ="{{ url_for('index2') }}"><img src="../static/assets/bookicon0.svg" alt ="book icon" class ="book_icon"></a>
+        <a href="{{ url_for('index2') }}">Friendly Books</a>
+        </div>
+
+        <div class="nav-right">
+        <ul>
+            <li><a href="{{ url_for('books') }}">SEARCH</a></li>
+            <li><a href="{{ url_for('loggedin_api') }}">API</a></li>
+            <li><a href="{{ url_for('login') }}"><span class="svgbutton">LOGOUT</span></a></li>
+        </ul>
+        </div>
+
+    </nav>
+
+        {% block bodycontent %}
+        {% endblock %}
+
+    </body>
+
+
+</html>
